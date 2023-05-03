@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import profile from '../../../assets/profile.jpg'
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+    }
+
     return (
         <div className="navbar bg-base-100 container mt-8">
             <div className="navbar-start">
@@ -20,13 +28,22 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <Link to='/' className='btn btn-ghost'>Home</Link>
                 <Link to='/blog' className='btn btn-ghost'>Blog</Link>
+                {!user && <Link to='/register' className='btn btn-ghost'>Register</Link>}
             </div>
             <div className="navbar-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-16 rounded-full">
-                        <img src={profile} />
-                    </div>
-                </label>
+                {user &&
+                    <>
+                        <Link to='/profile' className='btn btn-ghost mr-4'>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-16 rounded-full">
+                                    <img src={profile} />
+                                </div>
+                            </label>
+                        </Link>
+                        <button onClick={handleLogOut} className='btn btn-ghost mr-4'>Logout</button>
+                    </>
+                }
+                {!user && <Link to='/login' className='btn btn-ghost'>Login</Link>}
             </div>
         </div >
     );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SlHeart } from "react-icons/sl";
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaHeart } from 'react-icons/fa';
@@ -52,9 +52,9 @@ const ChefRecipe = () => {
                 </div>
             ) : (
                 <div>
-                    <div className="relative h-96 container mt-24 lg:mt-12">
+                    <div className="relative h-96 container mt-32 lg:mt-12">
                         <img src={data.picture} alt="" className="h-full w-full object-cover blur-sm" />
-                        <div className="absolute bottom-0 left-0 right-0 lg:py-6 px-4 sm:px-4 lg:px-8 bg-gray-900 bg-opacity-75">
+                        <div className="absolute bottom-0 left-0 right-0 py-6 px-4 sm:px-4 lg:px-8 bg-gray-900 bg-opacity-75">
                             <div className="flex flex-col sm:flex-row-reverse sm:justify-between sm:items-center">
                                 <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-0">
                                     <img className="h-40 w-40 mr-2 object-cover object-center rounded-full ring-4 ring-orange-400" src={data.picture} alt="" />

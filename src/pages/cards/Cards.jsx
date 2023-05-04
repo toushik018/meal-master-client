@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import HomeCards from '../homeCards/HomeCards';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Cards = () => {
 
@@ -14,7 +16,7 @@ const Cards = () => {
                 console.log(data);
             })
             .catch(error => {
-            console.error(error);
+                console.error(error);
 
             })
     }, [])
@@ -22,29 +24,38 @@ const Cards = () => {
 
     return (
         <div>
-            <div className='flex flex-wrap justify-center mb-8'>
-            <h1 className='text-4xl container mb-4 font-semibold'>The Great Chefs</h1>
-            {cards.map((card) => (
-                <div
-                    key={card.id}
-                    className="card w-full sm:w-96 m-4 shadow-md border-gray-200 border-2 bg-gray-100">
-                    <figure className='mx-auto rounded-full w-40 h-40 overflow-hidden mt-8'>
-                        <img className=' object-cover w-full h-full' src={card?.picture} alt={card.name} /></figure>
+            <div className="flex flex-wrap justify-center mb-8">
+                <h1 className="text-4xl container mb-4 font-semibold">The Great Chefs</h1>
+                {cards.map((card) => (
+                    <div
+                        key={card.id}
+                        className="card w-full sm:w-96 m-4 shadow-md border-gray-200 border-2 bg-gray-100"
+                    >
+                        <figure className="mx-auto object-cover object-center h-48 w-full overflow-hidden">
+                        
+                            <LazyLoadImage 
+                             className="object-cover w-full h-full"
+                            effect="blur"
+                            src={card?.picture} alt={card.name}
+                            /> 
+                               
+                        </figure>
 
-                    <div className="card-body">
-                        <h2 className="card-title">{card?.name}</h2>
-                        <p>{`${card?.experience} years of experience`}</p>
-                        <p>{`${card?.NumberOfRecipes} recipes`}</p>
-                        <div className="card-actions justify-end items-center">
-                            <p>{card.ratings}</p>
-                            <Link to={`/viewDetails/${card.id}`}><button className="button">View Recipe</button></Link>
+                        <div className="card-body">
+                            <h2 className="card-title">{card?.name}</h2>
+                            <p>{`${card?.experience} years of experience`}</p>
+                            <p>{`${card?.NumberOfRecipes} recipes`}</p>
+                            <div className="card-actions justify-end items-center">
+                                <p>{card.ratings}</p>
+                                <Link to={`/viewDetails/${card.id}`}>
+                                    <button className="button">View Recipe</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-            
-        </div>
-        <HomeCards></HomeCards>
+                ))}
+            </div>
+            <HomeCards></HomeCards>
         </div>
 
     );

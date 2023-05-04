@@ -8,12 +8,15 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/register/Register";
 import ChefRecipe from "../pages/chefRecipe/ChefRecipe";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Error/ErrorPage";
+import Terms from "../pages/shared/Terms/Terms";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -32,11 +35,16 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/terms',
+                element: <Terms></Terms>
+
+            },
+            {
                 path: '/viewDetails/:id',
                 element: <PrivateRoute>
                     <ChefRecipe></ChefRecipe>
                 </PrivateRoute>,
-                loader: ({params}) =>   fetch(`http://localhost:3000/chefs/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:3000/chefs/${params.id}`)
             }
         ]
     },

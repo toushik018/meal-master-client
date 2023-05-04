@@ -11,7 +11,7 @@ const Blog = () => {
         <p>
           Uncontrolled components are like wild teenagers - they do their own thing! They manage their own state
           internally, using refs for input forms. Controlled components, on the other hand, are well-behaved. Their
-          state is managed by a parent component and they receive updates through props.
+          state is managed by a parent component and they receive updates through props..
         </p>
       </div>
 

@@ -10,10 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, popUpGoogle, popUpGithub } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log('location page', location);
+  // console.log('location page', location);
   const from = location.state?.from?.pathname || "/";
 
   const handleSignIn = (event) => {
@@ -40,6 +40,28 @@ const Login = () => {
       })
   }
 
+  const handleGoogleSignIn = () => {
+    popUpGoogle()
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  const handleGithub = () => {
+    popUpGithub()
+    .then( result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   const handleShowPassword = () => setShowPassword(!showPassword);
 
   return (
@@ -48,7 +70,7 @@ const Login = () => {
         <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
           <h2 className="text-2xl font-medium text-gray-800 mb-4">Login</h2>
 
-          {error && ( 
+          {error && (
             <div className="bg-red-100 text-red-700 px-4 py-2 mb-4 rounded-md">{error}</div>
           )}
           <form onSubmit={handleSignIn}>
@@ -93,20 +115,23 @@ const Login = () => {
         <div className="grid h-32 card bg-gray-100 rounded-lg place-items-center">
           <div className="mt-6">
             <div className="flex items-center justify-center">
-              <Link
+
+              <button onClick={handleGoogleSignIn}
                 href="/auth/google"
                 className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md flex items-center justify-center mr-4"
               >
                 <FaGoogle size={20} className="mr-2" />
                 Google
-              </Link>
-              <Link
+              </button>
+
+
+              <button onClick={handleGithub}
                 href="/auth/github"
                 className="bg-gray-800 hover:bg-gray-900 text-white font-medium py-2 px-4 rounded-md flex items-center justify-center"
               >
                 <FaGithub size={20} className="mr-2" />
                 GitHub
-              </Link>
+              </button>
             </div>
           </div>
         </div>

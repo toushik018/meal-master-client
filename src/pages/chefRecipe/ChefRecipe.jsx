@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaHeart } from 'react-icons/fa';
 import { css } from "@emotion/react";
 import { ClipLoader } from "react-spinners";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ChefRecipe = () => {
     const data = useLoaderData();
@@ -16,7 +18,7 @@ const ChefRecipe = () => {
 
     useEffect(() => {
         setRecipeData(data.recipes);
-        console.log(data);
+        console.log(recipeData.rating);
 
         const favoriteRecipe = localStorage.getItem('favoriteRecipe');
         if (favoriteRecipe) {
@@ -86,7 +88,9 @@ const ChefRecipe = () => {
                                 <div className="p-8 mt-auto">
                                     <div className="flex items-center">
                                         <span className="text-gray-900 font-bold">{recipe.rating}</span>
-                                        <span className="ml-2 text-gray-600">Rating</span>
+                                        <span className="ml-2 text-gray-600">
+                                        <Rating style={{ maxWidth: 150 }} value={Math.round(recipe?.rating || 0)} readOnly />
+                                        </span>
                                         <span className="flex-grow"></span>
                                         {isFavorite(recipe.id) ?
                                             <span className="text-red-600 cursor-not-allowed" disabled>

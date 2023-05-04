@@ -44,7 +44,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <ChefRecipe></ChefRecipe>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3000/chefs/${params.id}`)
+                loader: ({ params }) => fetch(`https://meal-master-server-toushik018.vercel.app/chefs/${params.id}`)
             }
         ]
     },

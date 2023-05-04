@@ -37,7 +37,6 @@ const router = createBrowserRouter([
             {
                 path: '/terms',
                 element: <Terms></Terms>
-
             },
             {
                 path: '/viewDetails/:id',

@@ -3,13 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 
 const Header = () => {
-
     const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
     }
-
     return (
         <div className="navbar bg-base-100 container mt-8">
             <div className="navbar-start">

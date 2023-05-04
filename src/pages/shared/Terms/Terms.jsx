@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Terms = () => {
     return (
-        <div className='mb-36'>
+        <div className='mb-36 mt-2'>
             <div className="flex items-center justify-center min-h-screen ">
                 <div className="w-full max-w-lg p-6">
                     <h2 className="text-2xl font-medium mb-4">Meal Master Terms and Conditions</h2>

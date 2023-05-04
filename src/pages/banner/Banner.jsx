@@ -6,7 +6,7 @@ const Banner = () => {
             <div className="absolute inset-0 bg-orange-400 opacity-50"></div>
             <div className="relative container px-4 py-32 mx-auto z-10">
                 <div className="max-w-3xl mx-auto">
-                    <h1 className="text-7xl font-extrabold font-serif text-white mb-6">Delicious Recipes</h1>
+                    <h1 className="text-5xl font-extrabold font-serif text-white mb-6">Delicious Recipes</h1>
                     <p className="text-2xl font-medium text-white mb-12">Find the perfect recipe to satisfy your cravings</p>
                 </div>
             </div>

@@ -54,18 +54,18 @@ const ChefRecipe = () => {
                 <div>
                     <div className="relative h-96 container mt-10">
                         <img src={data.picture} alt="" className="h-full w-full object-cover blur-sm" />
-                        <div className="absolute bottom-0 left-0 right-0 py-6 px-4 sm:px-6 lg:px-8 bg-gray-900 bg-opacity-75">
+                        <div className="absolute bottom-0 left-0 right-0 lg:py-6 px-4 sm:px-4 lg:px-8 bg-gray-900 bg-opacity-75">
                             <div className="sm:flex sm:justify-between sm:items-center">
                                 <div className="flex items-center space-x-4">
                                     <img className="h-40 w-40 mr-2 object-cover object-center rounded-full ring-4 ring-orange-400" src={data.picture} alt="" />
                                     <div>
-                                        <h2 className="text-3xl font-bold text-white mb-4">{data.name}</h2>
-                                        <p className="text-lg font-medium text-gray-400">{data.description}</p>
+                                        <h2 className="sm:text-xl lg:text-3xl font-bold text-white mb-4">{data.name}</h2>
+                                        <p className="sm:text-lg font-medium text-gray-400">{data.description}</p>
                                         <div className="flex items-center space-x-2 mt-2 mb-2">
                                             <FaHeart size={25} className="text-red-500" />
-                                            <p className="text-white text-lg">{data.likes} likes</p>
+                                            <p className="text-white sm:text-lg">{data.likes} likes</p>
                                         </div>
-                                        <p className="text-white text-lg">{data.NumberOfRecipes} recipes | {data.experience} years of experience</p>
+                                        <p className="text-white sm:text-lg">{data.NumberOfRecipes} recipes | {data.experience} years of experience</p>
                                     </div>
                                 </div> 
                             </div>

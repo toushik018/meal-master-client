@@ -33,13 +33,13 @@ const Header = () => {
             <div className="navbar-end">
                 {user &&
                     <>
-                        <Link to='/profile' className='btn btn-ghost mr-4'>
+                        <div to='/profile' className=' mr-4 tooltip' data-tip={user.displayName}>
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-16 rounded-full">
-                                    <img src={profile} />
+                                <div className="w-16 rounded-full" >
+                                <img src={user.photoURL} alt="Profile" />
                                 </div>
                             </label>
-                        </Link>
+                        </div>
                         <button onClick={handleLogOut} className='btn btn-ghost mr-4'>Logout</button>
                     </>
                 }

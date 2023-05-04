@@ -1,6 +1,7 @@
 import React from 'react';
 import banner from '../../assets/banner.jpg';
 import Cards from '../cards/Cards';
+import Banner from '../banner/Banner';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <Banner></Banner>
         <Cards></Cards>
         </div>
     );

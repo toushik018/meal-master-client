@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log('location page', location);
+  const from = location.state?.from?.pathname || "/";
 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -18,15 +21,16 @@ const Login = () => {
     console.log(email, password);
 
     signIn(email, password)
-    .then(result => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
-      form.reset();
-    })
-    .catch(error => {
-      console.log(error);
-      
-    })
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true })
+        form.reset();
+      })
+      .catch(error => {
+        console.log(error);
+
+      })
   }
 
   const handleShowPassword = () => setShowPassword(!showPassword);

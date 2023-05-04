@@ -2,12 +2,17 @@ import React, { useContext, useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+
+
+const auth = getAuth(app);
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
 
-  const {createUser} = useContext(AuthContext);
+  const {createUser, user,logOut} = useContext(AuthContext);
 
   const handleShowPassword = () => setShowPassword(!showPassword);
 
@@ -42,6 +47,16 @@ const Register = () => {
     .then(result => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photoURL
+      }).then(() => {
+        // Profile updated!
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        // ...
+      });
+      logOut();
     })
     .catch(error => {
       console.log(error);

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import profile from '../../../assets/profile.jpg'
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
 
 const Header = () => {
@@ -26,9 +25,9 @@ const Header = () => {
                 <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Meal <span className='text-orange-400'> Master</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <Link to='/' className='btn btn-ghost'>Home</Link>
-                <Link to='/blog' className='btn btn-ghost'>Blog</Link>
-                {!user && <Link to='/register' className='btn btn-ghost'>Register</Link>}
+                <NavLink to='/' className='btn btn-ghost'>Home</NavLink>
+                <NavLink to='/blog' className='btn btn-ghost' >Blog</NavLink>
+                {!user && <NavLink to='/register' className='btn btn-ghost'>Register</NavLink>}
             </div>
             <div className="navbar-end">
                 {user &&
@@ -43,7 +42,7 @@ const Header = () => {
                         <button onClick={handleLogOut} className='btn btn-ghost mr-4'>Logout</button>
                     </>
                 }
-                {!user && <Link to='/login' className='btn btn-ghost'>Login</Link>}
+                {!user && <NavLink to='/login' className='btn btn-ghost'>Login</NavLink>}
             </div>
         </div >
     );

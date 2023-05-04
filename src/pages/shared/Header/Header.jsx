@@ -18,6 +18,7 @@ const Header = () => {
                     <div tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to='/' className='btn btn-ghost'>Home</Link>
                         <Link to='/blog' className='btn btn-ghost'>Blog</Link>
+                        {!user && <NavLink to='/register' className='btn btn-ghost'>Register</NavLink>}
                     </div>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Meal <span className='text-orange-400'> Master</span></Link>

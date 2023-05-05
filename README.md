@@ -1,32 +1,24 @@
 "# b7a10-chef-recipe-hunter-client-side-toushik018" 
 
+# Meal Master
+Meal Master is a web application that provides a platform for chefs to share their favorite recipes with others. Users can browse a wide range of recipes, filter them based on different criteria, and save them for later reference. Chefs can also create and publish their own recipes, and manage their recipe collections.
 
-Meal Master is an Indian recipe website that provides users with a collection of authentic Indian recipes, cooking tips, and food-related articles.
+# Features
+- Search for recipes by keyword, ingredient, or category
+- Filter recipes by dietary restrictions, cooking time, or difficulty level
+- Save favorite recipes to your profile for easy access later
+- Create and publish your own recipes, complete with photos and detailed instructions
+- Manage your recipe collection, including editing and deleting recipes as needed
 
-Features:
-
-Browse through a wide range of authentic Indian recipes
-Search for specific recipes by name or ingredient
-Save your favorite recipes for quick access later
-Create your profile to view and manage your saved recipes
-Read food-related articles and cooking tips
-Visit the live site here: https://meal-master-client2.web.app/
-
-Instructions for local development:
-
-Clone the repository
-Install dependencies with npm install
-Start the development server with npm start
-Technologies used:
-
-React.js
-Tailwind CSS
-Firebase Authentication
-Vercel (for deployment)
-Contributors:
-
-[Your Name]
-Contact:
+# Technologies Used
+- React for the front-end interface
+- Firebase for user authentication and real-time database storage
+- Tailwind CSS for styling and layout
+- React Router for client-side routing
+- React Query for efficient data fetching and caching
+- Lottie for animated illustrations
+# Live Site
+Check out the live site at https://meal-master-client2.web.app/.
 
 Email: [toushikahmmed@gmail.com]
 GitHub: [https://github.com/toushik018]

@@ -48,7 +48,7 @@ const Blog = () => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16, marginTop: 10 }}>
             Uncontrolled vs Controlled Components
           </Text>
           <Text>
@@ -56,7 +56,7 @@ const Blog = () => {
             internally, using refs for input forms. Controlled components, on the other hand, are well-behaved. Their
             state is managed by a parent component and they receive updates through props.
           </Text>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16, marginTop: 10 }}>
             Validating Props with PropTypes
           </Text>
           <Text>
@@ -65,7 +65,7 @@ const Blog = () => {
             propTypes object for your component. For example, if you have a 'name' prop that should be a string, you'll
             do: MyComponent.propTypes = name: PropTypes.string.
           </Text>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16, marginTop: 10 }}>
             Node.js vs Express.js
           </Text>
           <Text>
@@ -73,7 +73,7 @@ const Blog = () => {
             is a framework built on top of Node.js. It's like Node.js is the cake, and Express.js is the icing and
             sprinkles, making it easier and more delicious to build web applications.
           </Text>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16 }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 16, marginTop: 10 }}>
             Custom Hooks
           </Text>
           <Text>

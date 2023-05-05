@@ -12,6 +12,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [accepted, setAccepted] = useState(false);
+  const [success, setSuccess] = useState('');
 
   const { createUser, user, logOut } = useContext(AuthContext);
 
@@ -33,6 +34,7 @@ const Register = () => {
     const confirm_password = form.confirm_password.value;
 
     setError(' ')
+    setSuccess(' ')
 
     if (!validatePassword(password)) {
       setError('Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.');
@@ -58,6 +60,7 @@ const Register = () => {
           // An error occurred
           // ...
         });
+        setSuccess('Registration successful! Please log in.');
         logOut();
         form.reset();
       })
@@ -141,11 +144,16 @@ const Register = () => {
             <div className="mb-6">
               <label className="block text-gray-700 font-medium mb-2">
                 <input onClick={handleAccepted} className="mr-2 leading-tight" type="checkbox" required />
-                <span  className="text-base">
+                <span className="text-base">
                   I agree to the <Link to='/terms' className="text-blue-500 hover:underline">terms and conditions</Link>.
                 </span>
               </label>
             </div>
+            {success && (
+              <p className="text-green-700 mt-2 px-4 py-2 mb-4 rounded-md">
+                {success}
+              </p>
+            )}
             <p className=' text-red-700 mt-2 px-4 py-2 mb-4 rounded-md'>{error}</p>
           </form>
         </div>

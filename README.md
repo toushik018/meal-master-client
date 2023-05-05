@@ -10,7 +10,7 @@ Search for specific recipes by name or ingredient
 Save your favorite recipes for quick access later
 Create your profile to view and manage your saved recipes
 Read food-related articles and cooking tips
-Visit the live site here: https://meal-master.herokuapp.com/
+Visit the live site here: https://meal-master-client2.web.app/
 
 Instructions for local development:
 
@@ -21,8 +21,8 @@ Technologies used:
 
 React.js
 Tailwind CSS
-Firebase Authentication and Firestore
-Heroku (for deployment)
+Firebase Authentication
+Vercel (for deployment)
 Contributors:
 
 [Your Name]

@@ -25,7 +25,7 @@ const Cards = () => {
     return (
         <div>
             <div className="flex flex-wrap justify-center mb-8">
-                <h1 className="text-4xl container mb-4 font-semibold">The Great Chefs</h1>
+                <h1 className="text-4xl container mb-4 font-bold pl-4">The Great Chefs</h1>
                 {cards.map((card) => (
                     <div
                         key={card.id}
@@ -46,7 +46,7 @@ const Cards = () => {
                             <p>{`${card?.experience} years of experience`}</p>
                             <p>{`${card?.NumberOfRecipes} recipes`}</p>
                             <div className="card-actions justify-end items-center">
-                                <p>{card.ratings}</p>
+                                <p>Likes {card.likes}</p>
                                 <Link to={`/viewDetails/${card.id}`}>
                                     <button className="button">View Recipe</button>
                                 </Link>

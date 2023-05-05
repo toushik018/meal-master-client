@@ -95,7 +95,7 @@ const Blog = () => {
         <h1 className="text-4xl font-bold">My Blog</h1>
         <button
           onClick={handleDownload}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+          className="bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full inline-flex items-center"
         >
           <FaDownload className="mr-2" />
           <span>Download PDF</span>

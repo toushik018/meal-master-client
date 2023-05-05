@@ -52,28 +52,29 @@ const ChefRecipe = () => {
                 </div>
             ) : (
                 <div>
-                    <div className="relative h-96 container mt-32 lg:mt-12">
-                        <img src={data.picture} alt="" className="h-full w-full object-cover blur-sm" />
-                        <div className="absolute bottom-0 left-0 right-0 py-6 px-4 sm:px-4 lg:px-8 bg-gray-900 bg-opacity-75">
-                            <div className="flex flex-col sm:flex-row-reverse sm:justify-between sm:items-center">
-                                <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-0">
-                                    <img className="h-40 w-40 mr-2 object-cover object-center rounded-full ring-4 ring-orange-400" src={data.picture} alt="" />
-                                    <div>
-                                        <h2 className="sm:text-xl lg:text-3xl font-bold text-white mb-4">{data.name}</h2>
-                                        <p className="sm:text-lg font-medium text-gray-400">{data.description}</p>
-                                        <div className="flex items-center space-x-2 mt-2 mb-2">
-                                            <FaHeart size={25} className="text-red-500" />
-                                            <p className="text-white sm:text-lg">{data.likes} likes</p>
+                    <div className="lg:w-4/5 w-full mx-auto">
+                        <div className="relative h-96 mt-32 lg:mt-12">
+                            <img src={data.picture} alt="" className="h-full w-full object-cover blur-sm" />
+                            <div className="absolute bottom-0 left-0 right-0 py-6 px-4 sm:px-4 lg:px-8 bg-gray-900 bg-opacity-75">
+                                <div className="flex flex-col sm:flex-row-reverse sm:justify-between sm:items-center">
+                                    <div className="flex flex-col items-center sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-0">
+                                        <img className="h-40 w-40 mr-2 object-cover object-center rounded-full ring-4 ring-orange-400" src={data.picture} alt="" />
+                                        <div>
+                                            <h2 className="sm:text-xl lg:text-3xl font-bold text-white mb-4">{data.name}</h2>
+                                            <p className="sm:text-lg font-medium text-gray-400">{data.description}</p>
+                                            <div className="flex items-center space-x-2 mt-2 mb-2">
+                                                <FaHeart size={25} className="text-red-500" />
+                                                <p className="text-white sm:text-lg">{data.likes} likes</p>
+                                            </div>
+                                            <p className="text-white sm:text-lg">{data.NumberOfRecipes} recipes | {data.experience} years of experience</p>
                                         </div>
-                                        <p className="text-white sm:text-lg">{data.NumberOfRecipes} recipes | {data.experience} years of experience</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 container mb-12 mt-12">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 w-11/12 mx-auto lg:w-4/5 mb-12 mt-12">
                         {recipeData.map((recipe) => (<div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col" key={recipe.id}>
                             <h3>  </h3>
                             <img src={recipe.image} className="object-cover object-center h-48 w-full" alt="Recipe image" />

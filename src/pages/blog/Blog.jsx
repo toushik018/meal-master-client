@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
   return (
     <div className="container mx-auto px-4 mb-12">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <h1 className="text-4xl font-bold mb-8  mt-10">My Blog</h1>
 
       <div className="bg-blue-100 p-8 rounded-lg mb-8">
         <h2 className="text-2xl font-semibold mb-4">Uncontrolled vs Controlled Components</h2>

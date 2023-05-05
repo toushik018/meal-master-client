@@ -37,8 +37,8 @@ const HomeCards = () => {
                 <div className="bg-gray-100 py-8 container rounded-lg">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <h2 className="text-3xl font-extrabold text-gray-900">Quick, Best, Healthy</h2>
-                        <p className="mt-2 text-lg text-gray-600">30-Minute Healthy and Delicious Indian Recipes <span className="text-gray-950">
-                        Quick and Easy Meals for Your Busy Lifestyle</span></p>
+                        <p className="mt-2 text-lg text-gray-600">
+                        Quick and Easy Meals for Your Busy Lifestyle</p>
                     </div>
                 </div>
 
@@ -47,22 +47,23 @@ const HomeCards = () => {
             
             {cards.map((card, index) => (
                 <div
-                    key={index}
-                    className={`relative bg-white rounded-md shadow-xl m-4 p-6 w-72 sm:w-80 lg:w-96 transform hover:-translate-y-1 hover:shadow-2xl duration-300 ${card.color}`}
-                >
-                    <div className="flex items-center mb-6">
-                        <div className="rounded-full bg-white p-2 text-red-700">{card.icon}</div>
-                        <h3 className="text-2xl font-bold ml-4">{card.title}</h3>
-                    </div>
-                    <p className="text-gray-900 mb-6">{card.description}</p>
-                    <a
-                        href='#'
-                        className="text-gray-700 font-semibold flex items-center"
-                    >
-                        View Recipes
-                        <FiChevronRight className="ml-2" />
-                    </a>
+                key={index}
+                className={`relative bg-white hover:bg-gradient-to-r from-orange-400 to-pink-400 hover:text-white rounded-md shadow-xl m-4 p-6 w-full sm:w-full lg:w-96 transform hover:-translate-y-1 hover:shadow-2xl duration-300 ${card.color}`}
+              >
+                <div className="flex items-center mb-6">
+                  <div className="rounded-full bg-white p-2 text-red-700">{card.icon}</div>
+                  <h3 className="text-2xl font-bold ml-4">{card.title}</h3>
                 </div>
+                <p className="text-gray-700 mb-6 transition-colors duration-300 hover:text-white">{card.description}</p>
+                <a
+                  href="#"
+                  className="text-gray-700 font-semibold flex items-center transition-colors duration-300 hover:text-white"
+                >
+                  View Recipes
+                  <FiChevronRight className="ml-2" />
+                </a>
+              </div>
+              
                 
             ))}
         </div>
